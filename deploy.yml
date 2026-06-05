@@ -1,0 +1,24 @@
+name: Deploy to GCP
+
+on:
+  push:
+    branches:
+      - main # triggers on every push to main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to server via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.GCP_SERVER_IP }}
+          username: ${{ secrets.GCP_SSH_USER }}
+          key: ${{ secrets.GCP_SSH_KEY }}
+          script: |
+            cd ${{ secrets.DEPLOY_PATH }}
+            git pull origin main
+            # If you have a build step (e.g. React/Vue):
+            # npm install && npm run build
+            sudo systemctl reload nginx
