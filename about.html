@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Wetlands - Sri Lanka</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* IWMI Brand Colors */
+        :root {
+            --iwmi-dark-blue: #28537D;
+            --iwmi-light-blue: #5088C6;
+            --iwmi-sky-blue: #46BBD4;
+            --iwmi-teal: #0297A6;
+            --iwmi-green: #22AD7A;
+            --iwmi-orange: #E86933;
+            --iwmi-yellow: #DD9103;
+            --iwmi-light-grey: #E8E7E7;
+            --iwmi-white: #FFFFFF;
+            --iwmi-text-dark: #333333;
+            --iwmi-text-light: #666666;
+            --iwmi-background: #F8F9FA;
+            --iwmi-border: #E0E7EE;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--iwmi-text-dark);
+            background: var(--iwmi-background);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Navigation Bar - IWMI Dark Blue */
+        nav {
+            background: var(--iwmi-dark-blue);
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo h2 {
+            color: var(--iwmi-white);
+            font-size: 1.4rem;
+            margin: 0;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo h2 i {
+            color: var(--iwmi-green);
+            font-size: 1.6rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-links a {
+            color: var(--iwmi-white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--iwmi-green);
+            opacity: 1;
+        }
+        
+        .nav-links a.active {
+            background: var(--iwmi-sky-blue);
+            color: var(--iwmi-white);
+            opacity: 1;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--iwmi-dark-blue);
+            color: var(--iwmi-white);
+            padding: 2rem 0;
+            margin-top: 4rem;
+            text-align: center;
+            border-top: 4px solid var(--iwmi-green);
+        }
+        
+        /* Main Content Styles */
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .page-title {
+            color: var(--iwmi-dark-blue);
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--iwmi-green);
+            border-radius: 2px;
+        }
+        
+        .page-subtitle {
+            text-align: center;
+            color: var(--iwmi-text-light);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .section-title {
+            color: var(--iwmi-dark-blue);
+            border-bottom: 3px solid var(--iwmi-green);
+            padding-bottom: 0.8rem;
+            margin: 3rem 0 2rem 0;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        
+        /* Ramsar Definition Box */
+        .ramsar-definition {
+            background: linear-gradient(135deg, rgba(70, 187, 212, 0.1) 0%, rgba(34, 173, 122, 0.1) 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 5px solid var(--iwmi-teal);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .definition-icon {
+            font-size: 2rem;
+            color: var(--iwmi-teal);
+            margin-right: 15px;
+            float: left;
+        }
+        
+        /* Understanding Wetlands Cards */
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0 3rem 0;
+        }
+        
+        .feature-card {
+            background: var(--iwmi-white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(40, 83, 125, 0.08);
+            border-top: 4px solid var(--iwmi-light-blue);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(40, 83, 125, 0.12);
+        }
+        
+        .feature-card h3 {
+            color: var(--iwmi-dark-blue);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+        
+        .feature-card ul {
+            margin: 1rem 0 0 0;
+            padding-left: 1.2rem;
+        }
+        
+        .feature-card li {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+        
+        /* Classification System */
+        .classification-system {
+            background: var(--iwmi-white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--iwmi-border);
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin: 1.5rem 0 0.5rem 0;
+            padding: 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: rgba(232, 231, 231, 0.3);
+            border-left: 5px solid;
+        }
+        
+        .category-header:hover {
+            background: rgba(70, 187, 212, 0.1);
+        }
+        
+        .marine { border-left-color: var(--iwmi-sky-blue); }
+        .inland { border-left-color: var(--iwmi-green); }
+        .human-made { border-left-color: var(--iwmi-orange); }
+        
+        .category-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            width: 40px;
+            text-align: center;
+        }
+        
+        .marine .category-icon { color: var(--iwmi-sky-blue); }
+        .inland .category-icon { color: var(--iwmi-green); }
+        .human-made .category-icon { color: var(--iwmi-orange); }
+        
+        .category-title {
+            flex: 1;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--iwmi-dark-blue);
+        }
+        
+        .type-count {
+            background: var(--iwmi-dark-blue);
+            color: var(--iwmi-white);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .category-content {
+            display: none;
+            margin-left: 55px;
+            padding: 1.5rem 0;
+            animation: fadeIn 0.5s;
+        }
+        
+        .category-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Classification Grid */
+        .classification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        
+        .classification-item {
+            background: var(--iwmi-white);
+            padding: 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid var(--iwmi-border);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .classification-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-color: var(--iwmi-light-blue);
+        }
+        
+        .class-code {
+            display: inline-block;
+            color: var(--iwmi-white);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: 700;
+            margin-right: 12px;
+            font-size: 0.9rem;
+        }
+        
+        .marine .class-code { background: var(--iwmi-sky-blue); }
+        .inland .class-code { background: var(--iwmi-green); }
+        .human-made .class-code { background: var(--iwmi-orange); }
+        
+        .class-title {
+            display: inline-block;
+            vertical-align: middle;
+            width: calc(100% - 50px);
+            font-weight: 600;
+            color: var(--iwmi-text-dark);
+            font-size: 0.95rem;
+        }
+        
+        .classification-details {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--iwmi-text-light);
+            display: none;
+            line-height: 1.6;
+            padding-top: 0.8rem;
+            border-top: 1px solid var(--iwmi-border);
+        }
+        
+        .classification-item.expanded .classification-details {
+            display: block;
+        }
+        
+        .example {
+            background: rgba(70, 187, 212, 0.05);
+            padding: 0.8rem;
+            border-radius: 6px;
+            margin-top: 0.8rem;
+            font-size: 0.85rem;
+            border-left: 3px solid var(--iwmi-sky-blue);
+        }
+        
+        .example strong {
+            color: var(--iwmi-teal);
+        }
+        
+        /* Search Box */
+        .search-box {
+            margin: 1.5rem 0 2.5rem 0;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            padding-left: 3.5rem;
+            border: 2px solid var(--iwmi-border);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s;
+            background: var(--iwmi-white);
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--iwmi-light-blue);
+            box-shadow: 0 0 0 3px rgba(80, 136, 198, 0.1);
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--iwmi-light-blue);
+            font-size: 1.2rem;
+        }
+        
+        /* Sri Lanka Ramsar Sites */
+        .sl-wetlands-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0 3rem 0;
+        }
+        
+        .wetland-item {
+            background: var(--iwmi-white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 1px solid var(--iwmi-border);
+        }
+        
+        .wetland-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        .wetland-header {
+            background: linear-gradient(135deg, var(--iwmi-dark-blue) 0%, var(--iwmi-light-blue) 100%);
+            color: var(--iwmi-white);
+            padding: 1.2rem;
+            position: relative;
+        }
+        
+        .wetland-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .ramsar-badge {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            background: var(--iwmi-green);
+            color: var(--iwmi-white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .wetland-content {
+            padding: 1.5rem;
+        }
+        
+        .wetland-content p {
+            margin: 0.5rem 0;
+            line-height: 1.6;
+            color: var(--iwmi-text-dark);
+        }
+        
+        .wetland-content strong {
+            color: var(--iwmi-dark-blue);
+        }
+        
+        .wetland-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--iwmi-border);
+        }
+        
+        .stat {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--iwmi-teal);
+            margin-bottom: 0.3rem;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--iwmi-text-light);
+            font-weight: 500;
+        }
+        
+        /* Wetland Functions */
+        .functions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+        
+        .function-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--iwmi-white);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border-top: 4px solid transparent;
+        }
+        
+        .function-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .function-card:nth-child(1) { border-top-color: var(--iwmi-sky-blue); }
+        .function-card:nth-child(2) { border-top-color: var(--iwmi-green); }
+        .function-card:nth-child(3) { border-top-color: var(--iwmi-orange); }
+        .function-card:nth-child(4) { border-top-color: var(--iwmi-teal); }
+        
+        .function-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+            background: rgba(70, 187, 212, 0.1);
+            color: var(--iwmi-sky-blue);
+        }
+        
+        .function-card:nth-child(2) .function-icon {
+            background: rgba(34, 173, 122, 0.1);
+            color: var(--iwmi-green);
+        }
+        
+        .function-card:nth-child(3) .function-icon {
+            background: rgba(232, 105, 51, 0.1);
+            color: var(--iwmi-orange);
+        }
+        
+        .function-card:nth-child(4) .function-icon {
+            background: rgba(2, 151, 166, 0.1);
+            color: var(--iwmi-teal);
+        }
+        
+        .function-card h3 {
+            color: var(--iwmi-dark-blue);
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .function-card p {
+            color: var(--iwmi-text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        /* Conservation Message */
+        .conservation-message {
+            text-align: center;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, var(--iwmi-dark-blue) 0%, var(--iwmi-teal) 100%);
+            color: var(--iwmi-white);
+            border-radius: 10px;
+            margin: 3rem 0;
+            box-shadow: 0 8px 25px rgba(40, 83, 125, 0.2);
+        }
+        
+        .conservation-message h3 {
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .conservation-message p {
+            max-width: 800px;
+            margin: 0.8rem auto;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+        
+        .conservation-message strong {
+            color: var(--iwmi-green);
+            font-weight: 600;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-container {
+                padding: 1.5rem;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .classification-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sl-wetlands-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.8rem;
+            }
+            
+            .category-content {
+                margin-left: 0;
+            }
+            
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.8rem;
+            }
+            
+            .nav-links a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            .logo h2 {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 1.6rem;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .feature-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .functions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .wetland-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <h2><i class="fas fa-water"></i> National Wetland Inventory of Sri Lanka</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" style="background-color:var(--iwmi-sky-blue);border-radius:4px;">About Wetlands</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main About Content -->
+    <div class="about-container">
+        <h1 class="page-title">About Sri Lanka's Wetlands</h1>
+        <p class="page-subtitle">
+            Comprehensive guide to wetland ecosystems following the international Ramsar Convention classification system
+        </p>
+        
+        <!-- Ramsar Definition -->
+        <div class="ramsar-definition">
+            <i class="fas fa-globe-asia definition-icon"></i>
+            <h3 style="color:var(--iwmi-teal); margin-top:0; font-weight:600;">The Ramsar Convention Definition</h3>
+            <p><strong style="color:var(--iwmi-dark-blue);">According to the Ramsar Convention (1971), wetlands are defined as:</strong></p>
+            <div style="background:var(--iwmi-white); padding:1.2rem; border-radius:6px; margin:0.8rem 0; border-left:4px solid var(--iwmi-green);">
+                <p style="font-style:italic; margin:0; color:var(--iwmi-text-dark); line-height:1.6;">
+                    "Areas of marshes, fen, peatland or water, whether natural or artificial, permanent or temporary, 
+                    with water that is flowing or static, fresh, brackish or salty, including areas of marine water 
+                    the depth of which at low tide does not exceed six metres. It may also include riparian and 
+                    coastal zones adjacent to the wetlands, and islands or bodies of marine water deeper than six 
+                    meters at low tide lying within the wetlands."
+                </p>
+            </div>
+            <p style="margin-top:1.2rem; color:var(--iwmi-text-light);">
+                <i class="fas fa-info-circle" style="color:var(--iwmi-light-blue);"></i> This broad definition covers 42 specific wetland types across 
+                3 main categories for comprehensive global protection.
+            </p>
+        </div>
+        
+        <!-- What are Wetlands -->
+        <h2 class="section-title">Understanding Wetlands</h2>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <h3><i class="fas fa-tint" style="color:var(--iwmi-sky-blue);"></i> Ecological Importance</h3>
+                <ul>
+                    <li>Home to 40% of all plant and animal species</li>
+                    <li>Natural water filtration systems</li>
+                    <li>Carbon storage and climate regulation</li>
+                    <li>Flood control and storm protection</li>
+                    <li>Source of freshwater and groundwater recharge</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3><i class="fas fa-map-marked-alt" style="color:var(--iwmi-green);"></i> Sri Lanka's Wetlands</h3>
+                <ul>
+                    <li>280,000+ hectares of diverse wetlands</li>
+                    <li>6 Ramsar Sites of International Importance</li>
+                    <li>12,000+ hectares of mangrove forests</li>
+                    <li>10,000+ ancient irrigation tanks</li>
+                    <li>200+ natural lakes and water bodies</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Complete Ramsar Classification System -->
+        <h2 class="section-title"><i class="fas fa-layer-group" style="color:var(--iwmi-sky-blue);"></i> Ramsar Wetland Classification System</h2>
+        
+        <!-- Search Box -->
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Search wetland types by code, name, or keyword...">
+        </div>
+        
+        <div class="classification-system">
+            <!-- Marine/Coastal Wetlands -->
+            <div class="category-header marine" onclick="toggleCategory('marine')">
+                <div class="category-icon">
+                    <i class="fas fa-water"></i>
+                </div>
+                <div class="category-title">Marine/Coastal Wetlands</div>
+                <div class="type-count">11 Types (A-K)</div>
+            </div>
+            
+            <div id="marine" class="category-content">
+                <p style="color:var(--iwmi-text-light); margin-bottom:1.5rem;">Wetlands influenced by marine waters, including coastal areas and shallow seas.</p>
+                
+                <div class="classification-grid" id="marine-grid">
+                    <!-- Type A -->
+                    <div class="classification-item marine" data-code="A" data-name="Permanent shallow marine waters">
+                        <div class="class-code">A</div>
+                        <div class="class-title"><strong>Permanent shallow marine waters</strong></div>
+                        <div class="classification-details">
+                            <p>Less than six metres deep at low tide; includes sea bays and straits.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Gulf of Mannar, Palk Bay
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type B -->
+                    <div class="classification-item marine" data-code="B" data-name="Marine subtidal aquatic beds">
+                        <div class="class-code">B</div>
+                        <div class="class-title"><strong>Marine subtidal aquatic beds</strong></div>
+                        <div class="classification-details">
+                            <p>Includes kelp beds, sea-grass beds, tropical marine meadows.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Sea-grass beds in Kalpitiya, Trincomalee
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type C -->
+                    <div class="classification-item marine" data-code="C" data-name="Coral reefs">
+                        <div class="class-code">C</div>
+                        <div class="class-title"><strong>Coral reefs</strong></div>
+                        <div class="classification-details">
+                            <p>Reef formations in marine waters.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Hikkaduwa Marine Sanctuary, Pigeon Island
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type D -->
+                    <div class="classification-item marine" data-code="D" data-name="Rocky marine shores">
+                        <div class="class-code">D</div>
+                        <div class="class-title"><strong>Rocky marine shores</strong></div>
+                        <div class="classification-details">
+                            <p>Includes rocky offshore islands, sea cliffs.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Rumassala, Great and Little Basses
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type E -->
+                    <div class="classification-item marine" data-code="E" data-name="Sand, shingle or pebble shores">
+                        <div class="class-code">E</div>
+                        <div class="class-title"><strong>Sand, shingle or pebble shores</strong></div>
+                        <div class="classification-details">
+                            <p>Includes sand bars, spits and sandy islets; includes dune systems.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Kalpitiya sand dunes, Nilaveli beaches
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type F -->
+                    <div class="classification-item marine" data-code="F" data-name="Estuarine waters">
+                        <div class="class-code">F</div>
+                        <div class="class-title"><strong>Estuarine waters</strong></div>
+                        <div class="classification-details">
+                            <p>Permanent water of estuaries and estuarine systems of deltas.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Mahaweli estuary, Kala Oya estuary
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type G -->
+                    <div class="classification-item marine" data-code="G" data-name="Intertidal mud, sand or salt flats">
+                        <div class="class-code">G</div>
+                        <div class="class-title"><strong>Intertidal mud, sand or salt flats</strong></div>
+                        <div class="classification-details">
+                            <p>Exposed intertidal areas without vegetation.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Vankalai mudflats, Mannar salt flats
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type H -->
+                    <div class="classification-item marine" data-code="H" data-name="Intertidal marshes">
+                        <div class="class-code">H</div>
+                        <div class="class-title"><strong>Intertidal marshes</strong></div>
+                        <div class="classification-details">
+                            <p>Includes salt marshes, salt meadows, saltings, raised salt marshes; includes tidal brackish and freshwater marshes.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Salt marshes in Puttalam, Batticaloa
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type I -->
+                    <div class="classification-item marine" data-code="I" data-name="Intertidal forested wetlands">
+                        <div class="class-code">I</div>
+                        <div class="class-title"><strong>Intertidal forested wetlands</strong></div>
+                        <div class="classification-details">
+                            <p>Includes mangrove swamps, nipah swamps and tidal freshwater swamp forests.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Puttalam mangroves, Maduganga estuary
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type J -->
+                    <div class="classification-item marine" data-code="J" data-name="Coastal brackish/saline lagoons">
+                        <div class="class-code">J</div>
+                        <div class="class-title"><strong>Coastal brackish/saline lagoons</strong></div>
+                        <div class="classification-details">
+                            <p>Brackish to saline lagoons with at least one relatively narrow connection to the sea.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Negombo Lagoon, Batticaloa Lagoon
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type K -->
+                    <div class="classification-item marine" data-code="K" data-name="Coastal freshwater lagoons">
+                        <div class="class-code">K</div>
+                        <div class="class-title"><strong>Coastal freshwater lagoons</strong></div>
+                        <div class="classification-details">
+                            <p>Includes freshwater delta lagoons.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Freshwater lagoons in Eastern Province
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Inland Wetlands -->
+            <div class="category-header inland" onclick="toggleCategory('inland')">
+                <div class="category-icon">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <div class="category-title">Inland Wetlands</div>
+                <div class="type-count">22 Types (L-Zk)</div>
+            </div>
+            
+            <div id="inland" class="category-content">
+                <p style="color:var(--iwmi-text-light); margin-bottom:1.5rem;">Freshwater wetlands away from coastal influence, including rivers, lakes, and marshes.</p>
+                
+                <div class="classification-grid" id="inland-grid">
+                    <!-- Type L -->
+                    <div class="classification-item inland" data-code="L" data-name="Permanent inland deltas">
+                        <div class="class-code">L</div>
+                        <div class="class-title"><strong>Permanent inland deltas</strong></div>
+                        <div class="classification-details">
+                            <p>River deltas located inland.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Mahaweli River delta areas
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type M -->
+                    <div class="classification-item inland" data-code="M" data-name="Permanent rivers/streams/creeks">
+                        <div class="class-code">M</div>
+                        <div class="class-title"><strong>Permanent rivers/streams/creeks</strong></div>
+                        <div class="classification-details">
+                            <p>Includes waterfalls and permanent flowing waters.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Mahaweli River, Kelani River
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type N -->
+                    <div class="classification-item inland" data-code="N" data-name="Seasonal/intermittent/irregular rivers/streams/creeks">
+                        <div class="class-code">N</div>
+                        <div class="class-title"><strong>Seasonal rivers/streams/creeks</strong></div>
+                        <div class="classification-details">
+                            <p>Watercourses that flow only during certain periods.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Dry Zone seasonal rivers (Malwathu Oya)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type O -->
+                    <div class="classification-item inland" data-code="O" data-name="Permanent freshwater lakes">
+                        <div class="class-code">O</div>
+                        <div class="class-title"><strong>Permanent freshwater lakes</strong></div>
+                        <div class="classification-details">
+                            <p>Lakes over 8 hectares; includes large oxbow lakes.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Gregory Lake, Kandy Lake
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type P -->
+                    <div class="classification-item inland" data-code="P" data-name="Seasonal/intermittent freshwater lakes">
+                        <div class="class-code">P</div>
+                        <div class="class-title"><strong>Seasonal freshwater lakes</strong></div>
+                        <div class="classification-details">
+                            <p>Seasonal lakes over 8 hectares; includes floodplain lakes.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Seasonal lakes in Wilpattu
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type Q -->
+                    <div class="classification-item inland" data-code="Q" data-name="Permanent saline/brackish/alkaline lakes">
+                        <div class="class-code">Q</div>
+                        <div class="class-title"><strong>Permanent saline/brackish/alkaline lakes</strong></div>
+                        <div class="classification-details">
+                            <p>Lakes with salty or alkaline water.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Salt lakes in Hambantota
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type R -->
+                    <div class="classification-item inland" data-code="R" data-name="Seasonal/intermittent saline/brackish/alkaline lakes and flats">
+                        <div class="class-code">R</div>
+                        <div class="class-title"><strong>Seasonal saline/brackish/alkaline lakes</strong></div>
+                        <div class="classification-details">
+                            <p>Seasonal lakes and flats with salty or alkaline water.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Seasonal salt pans in dry areas
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type Sp -->
+                    <div class="classification-item inland" data-code="Sp" data-name="Permanent saline/brackish/alkaline marshes/pools">
+                        <div class="class-code">Sp</div>
+                        <div class="class-title"><strong>Permanent saline/brackish/alkaline marshes/pools</strong></div>
+                        <div class="classification-details">
+                            <p>Marshes and pools with salty or alkaline water.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Permanent salt marshes
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type Ss -->
+                    <div class="classification-item inland" data-code="Ss" data-name="Seasonal/intermittent saline/brackish/alkaline marshes/pools">
+                        <div class="class-code">Ss</div>
+                        <div class="class-title"><strong>Seasonal saline/brackish/alkaline marshes/pools</strong></div>
+                        <div class="classification-details">
+                            <p>Seasonal marshes and pools with salty or alkaline water.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Seasonal salt marshes
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type Tp -->
+                    <div class="classification-item inland" data-code="Tp" data-name="Permanent freshwater marshes/pools">
+                        <div class="class-code">Tp</div>
+                        <div class="class-title"><strong>Permanent freshwater marshes/pools</strong></div>
+                        <div class="classification-details">
+                            <p>Ponds (below 8 ha), marshes and swamps on inorganic soils; with emergent vegetation water-logged for most of the growing season.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Bellanwila-Attidiya Sanctuary
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type Ts -->
+                    <div class="classification-item inland" data-code="Ts" data-name="Seasonal/intermittent freshwater marshes/pools">
+                        <div class="class-code">Ts</div>
+                        <div class="class-title"><strong>Seasonal freshwater marshes/pools</strong></div>
+                        <div class="classification-details">
+                            <p>Includes sloughs, potholes, seasonally flooded meadows, sedge marshes.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Seasonal marshes in dry zone
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type U -->
+                    <div class="classification-item inland" data-code="U" data-name="Non-forested peatlands">
+                        <div class="class-code">U</div>
+                        <div class="class-title"><strong>Non-forested peatlands</strong></div>
+                        <div class="classification-details">
+                            <p>Includes shrub or open bogs, swamps, fens.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Muthurajawela Marsh
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type Va -->
+                    <div class="classification-item inland" data-code="Va" data-name="Alpine wetlands">
+                        <div class="class-code">Va</div>
+                        <div class="class-title"><strong>Alpine wetlands</strong></div>
+                        <div class="classification-details">
+                            <p>Includes alpine meadows, temporary waters from snowmelt.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Not applicable
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type Vt -->
+                    <div class="classification-item inland" data-code="Vt" data-name="Tundra wetlands">
+                        <div class="class-code">Vt</div>
+                        <div class="class-title"><strong>Tundra wetlands</strong></div>
+                        <div class="classification-details">
+                            <p>Includes tundra pools, temporary waters from snowmelt.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Not applicable
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type W -->
+                    <div class="classification-item inland" data-code="W" data-name="Shrub-dominated wetlands">
+                        <div class="class-code">W</div>
+                        <div class="class-title"><strong>Shrub-dominated wetlands</strong></div>
+                        <div class="classification-details">
+                            <p>Shrub swamps, shrub-dominated freshwater marsh, shrub carr, alder thicket.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Shrub swamps in intermediate zone
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type Xf -->
+                    <div class="classification-item inland" data-code="Xf" data-name="Freshwater tree-dominated wetlands">
+                        <div class="class-code">Xf</div>
+                        <div class="class-title"><strong>Freshwater tree-dominated wetlands</strong></div>
+                        <div class="classification-details">
+                            <p>Includes freshwater swamp forest, seasonally flooded forest, wooded swamps.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Sinharaja buffer zone wetlands
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type Xp -->
+                    <div class="classification-item inland" data-code="Xp" data-name="Forested peatlands">
+                        <div class="class-code">Xp</div>
+                        <div class="class-title"><strong>Forested peatlands</strong></div>
+                        <div class="classification-details">
+                            <p>Peatswamp forest.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Not applicable
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type Y -->
+                    <div class="classification-item inland" data-code="Y" data-name="Freshwater springs">
+                        <div class="class-code">Y</div>
+                        <div class="class-title"><strong>Freshwater springs</strong></div>
+                        <div class="classification-details">
+                            <p>Oases and natural spring systems.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Kitulgala springs, Ella springs
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type Zg -->
+                    <div class="classification-item inland" data-code="Zg" data-name="Geothermal wetlands">
+                        <div class="class-code">Zg</div>
+                        <div class="class-title"><strong>Geothermal wetlands</strong></div>
+                        <div class="classification-details">
+                            <p>Wetlands influenced by geothermal activity.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Not applicable
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type Zk -->
+                    <div class="classification-item inland" data-code="Zk" data-name="Subterranean karst and cave hydrological systems">
+                        <div class="class-code">Zk</div>
+                        <div class="class-title"><strong>Subterranean karst and cave systems</strong></div>
+                        <div class="classification-details">
+                            <p>Caves and underground water systems in karst landscapes.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Not applicable
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Human-made Wetlands -->
+            <div class="category-header human-made" onclick="toggleCategory('human-made')">
+                <div class="category-icon">
+                    <i class="fas fa-industry"></i>
+                </div>
+                <div class="category-title">Human-made Wetlands</div>
+                <div class="type-count">9 Types (1-9)</div>
+            </div>
+            
+            <div id="human-made" class="category-content">
+                <p style="color:var(--iwmi-text-light); margin-bottom:1.5rem;">Wetlands created or significantly modified by human activity.</p>
+                
+                <div class="classification-grid" id="human-made-grid">
+                    <!-- Type 1 -->
+                    <div class="classification-item human-made" data-code="1" data-name="Aquaculture ponds">
+                        <div class="class-code">1</div>
+                        <div class="class-title"><strong>Aquaculture ponds</strong></div>
+                        <div class="classification-details">
+                            <p>Fish/shrimp ponds and aquaculture facilities.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Prawn farms in Puttalam
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type 2 -->
+                    <div class="classification-item human-made" data-code="2" data-name="Ponds">
+                        <div class="class-code">2</div>
+                        <div class="class-title"><strong>Ponds</strong></div>
+                        <div class="classification-details">
+                            <p>Includes farm ponds, stock ponds, small tanks (generally below 8 ha).</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Village ponds across Sri Lanka
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type 3 -->
+                    <div class="classification-item human-made" data-code="3" data-name="Irrigated land">
+                        <div class="class-code">3</div>
+                        <div class="class-title"><strong>Irrigated land</strong></div>
+                        <div class="classification-details">
+                            <p>Includes irrigation channels and rice fields.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Rice paddies in Dry Zone
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type 4 -->
+                    <div class="classification-item human-made" data-code="4" data-name="Seasonally flooded agricultural land">
+                        <div class="class-code">4</div>
+                        <div class="class-title"><strong>Seasonally flooded agricultural land</strong></div>
+                        <div class="classification-details">
+                            <p>Agricultural land that floods seasonally.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Floodplain agriculture
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type 5 -->
+                    <div class="classification-item human-made" data-code="5" data-name="Salt exploitation sites">
+                        <div class="class-code">5</div>
+                        <div class="class-title"><strong>Salt exploitation sites</strong></div>
+                        <div class="classification-details">
+                            <p>Salt pans, salines, etc.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Salt pans in Puttalam, Hambantota
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type 6 -->
+                    <div class="classification-item human-made" data-code="6" data-name="Water storage areas">
+                        <div class="class-code">6</div>
+                        <div class="class-title"><strong>Water storage areas</strong></div>
+                        <div class="classification-details">
+                            <p>Reservoirs, barrages, dams, impoundments (generally over 8 ha).</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Victoria Reservoir, Parakrama Samudra
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type 7 -->
+                    <div class="classification-item human-made" data-code="7" data-name="Excavations">
+                        <div class="class-code">7</div>
+                        <div class="class-title"><strong>Excavations</strong></div>
+                        <div class="classification-details">
+                            <p>Gravel/brick/clay pits; borrow pits, mining pools.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Clay pits, gem mining pits
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type 8 -->
+                    <div class="classification-item human-made" data-code="8" data-name="Wastewater treatment areas">
+                        <div class="class-code">8</div>
+                        <div class="class-title"><strong>Wastewater treatment areas</strong></div>
+                        <div class="classification-details">
+                            <p>Sewage farms, settling ponds, oxidation basins, etc.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Colombo wastewater treatment ponds
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Type 9 -->
+                    <div class="classification-item human-made" data-code="9" data-name="Canals and drainage channels">
+                        <div class="class-code">9</div>
+                        <div class="class-title"><strong>Canals and drainage channels</strong></div>
+                        <div class="classification-details">
+                            <p>Ditches and constructed water channels.</p>
+                            <div class="example">
+                                <strong>Sri Lanka Example:</strong> Dutch canals in Colombo
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sri Lanka's Ramsar Sites -->
+        <h2 class="section-title"><i class="fas fa-award" style="color:var(--iwmi-yellow);"></i> Sri Lanka's Ramsar Wetlands of International Importance</h2>
+        <p style="color:var(--iwmi-text-light); margin-bottom:1.5rem;">Sri Lanka has designated 6 wetlands as Ramsar Sites of International Importance:</p>
+
+        <div class="sl-wetlands-list">
+            <!-- Bundala -->
+            <div class="wetland-item">
+                <div class="wetland-header">
+                    <h3>Bundala National Park</h3>
+                    <span class="ramsar-badge">Ramsar Site</span>
+                </div>
+                <div class="wetland-content">
+                    <p><strong>Designated:</strong> 1990</p>
+                    <p><strong>Area:</strong> 6,216 hectares</p>
+                    <p><strong>Ramsar Types:</strong> J (Coastal lagoons), Sp (Saline marshes)</p>
+                    <p>An important habitat for waterbirds, supporting 197 species including Greater Flamingo.</p>
+                    <div class="wetland-stats">
+                        <div class="stat">
+                            <div class="stat-value">197</div>
+                            <div class="stat-label">Bird Species</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">32</div>
+                            <div class="stat-label">Fish Species</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">1990</div>
+                            <div class="stat-label">Year Listed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Anawilundawa -->
+            <div class="wetland-item">
+                <div class="wetland-header">
+                    <h3>Anawilundawa Sanctuary</h3>
+                    <span class="ramsar-badge">Ramsar Site</span>
+                </div>
+                <div class="wetland-content">
+                    <p><strong>Designated:</strong> 2001</p>
+                    <p><strong>Area:</strong> 1,397 hectares</p>
+                    <p><strong>Ramsar Types:</strong> 6 (Water storage), Tp (Freshwater marshes)</p>
+                    <p>Cascade of six ancient irrigation tanks providing habitat for numerous threatened species including the Sloth Bear.</p>
+                    <div class="wetland-stats">
+                        <div class="stat">
+                            <div class="stat-value">150+</div>
+                            <div class="stat-label">Bird Species</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">6</div>
+                            <div class="stat-label">Ancient Tanks</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">2001</div>
+                            <div class="stat-label">Year Listed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Maduganga -->
+            <div class="wetland-item">
+                <div class="wetland-header">
+                    <h3>Maduganga Estuary</h3>
+                    <span class="ramsar-badge">Ramsar Site</span>
+                </div>
+                <div class="wetland-content">
+                    <p><strong>Designated:</strong> 2003</p>
+                    <p><strong>Area:</strong> 915 hectares</p>
+                    <p><strong>Ramsar Types:</strong> I (Mangrove forests), J (Coastal lagoons)</p>
+                    <p>A shallow water body with 15 islands covered by dense mangrove forests, supporting rich biodiversity.</p>
+                    <div class="wetland-stats">
+                        <div class="stat">
+                            <div class="stat-value">15</div>
+                            <div class="stat-label">Islands</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">303</div>
+                            <div class="stat-label">Plant Species</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">2003</div>
+                            <div class="stat-label">Year Listed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vankalai -->
+            <div class="wetland-item">
+                <div class="wetland-header">
+                    <h3>Vankalai Sanctuary</h3>
+                    <span class="ramsar-badge">Ramsar Site</span>
+                </div>
+                <div class="wetland-content">
+                    <p><strong>Designated:</strong> 2010</p>
+                    <p><strong>Area:</strong> 4,839 hectares</p>
+                    <p><strong>Ramsar Types:</strong> J (Coastal lagoons), G (Intertidal mudflats)</p>
+                    <p>Important for migratory waterbirds and supporting local fisheries. Part of the Mannar Barrier Island system.</p>
+                    <div class="wetland-stats">
+                        <div class="stat">
+                            <div class="stat-value">100+</div>
+                            <div class="stat-label">Migratory Birds</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">4,839</div>
+                            <div class="stat-label">Hectares</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">2010</div>
+                            <div class="stat-label">Year Listed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Kumana -->
+            <div class="wetland-item">
+                <div class="wetland-header">
+                    <h3>Kumana National Park</h3>
+                    <span class="ramsar-badge">Ramsar Site</span>
+                </div>
+                <div class="wetland-content">
+                    <p><strong>Designated:</strong> 2010</p>
+                    <p><strong>Area:</strong> 18,900 hectares</p>
+                    <p><strong>Ramsar Types:</strong> J (Coastal lagoons), Tp (Freshwater marshes)</p>
+                    <p>Famous for its birdlife and mangrove ecosystems in Eastern Sri Lanka. Also known as Yala East.</p>
+                    <div class="wetland-stats">
+                        <div class="stat">
+                            <div class="stat-value">255</div>
+                            <div class="stat-label">Bird Species</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">18,900</div>
+                            <div class="stat-label">Hectares</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">2010</div>
+                            <div class="stat-label">Year Listed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Wilpattu -->
+            <div class="wetland-item">
+                <div class="wetland-header">
+                    <h3>Wilpattu Ramsar Site</h3>
+                    <span class="ramsar-badge">Ramsar Site</span>
+                </div>
+                <div class="wetland-content">
+                    <p><strong>Designated:</strong> 2013</p>
+                    <p><strong>Area:</strong> 165,800 hectares</p>
+                    <p><strong>Ramsar Types:</strong> O (Freshwater lakes), Ts (Seasonal marshes)</p>
+                    <p>Characterized by numerous "villus" (natural lakes) supporting diverse wildlife including leopards and elephants.</p>
+                    <div class="wetland-stats">
+                        <div class="stat">
+                            <div class="stat-value">50+</div>
+                            <div class="stat-label">Villus</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">165,800</div>
+                            <div class="stat-label">Hectares</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">2013</div>
+                            <div class="stat-label">Year Listed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Wetland Functions -->
+        <h2 class="section-title">Wetland Functions & Services</h2>
+        <div class="functions-grid">
+            <div class="function-card">
+                <div class="function-icon">
+                    <i class="fas fa-filter"></i>
+                </div>
+                <h3>Water Purification</h3>
+                <p>Remove pollutants and improve water quality through natural filtration</p>
+            </div>
+            
+            <div class="function-card">
+                <div class="function-icon">
+                    <i class="fas fa-umbrella"></i>
+                </div>
+                <h3>Flood Control</h3>
+                <p>Absorb excess rainfall and reduce flood impacts on communities</p>
+            </div>
+            
+            <div class="function-card">
+                <div class="function-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Carbon Storage</h3>
+                <p>Sequestrate carbon in plants and soils, mitigating climate change</p>
+            </div>
+            
+            <div class="function-card">
+                <div class="function-icon">
+                    <i class="fas fa-dna"></i>
+                </div>
+                <h3>Biodiversity Support</h3>
+                <p>Provide habitat for numerous plant and animal species</p>
+            </div>
+        </div>
+        
+        <!-- Conservation Message -->
+        <div class="conservation-message">
+            <h3><i class="fas fa-hands"></i> Protecting Sri Lanka's Wetlands</h3>
+            <p>Wetlands cover only 3% of Sri Lanka's land area but provide essential services worth billions of rupees annually.</p>
+            <p style="margin-top:1.5rem;">
+                <strong>Report wetland destruction:</strong> Department of Wildlife Conservation | 
+                <strong>Learn more:</strong> Central Environmental Authority
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div style="max-width:1200px; margin:0 auto; padding:0 1rem;">
+            <p>&copy; National Wetland Inventory of Sri Lanka 2026</p>
+            <p style="font-size:0.9rem; opacity:0.8; margin-top:0.5rem;">Project of International Water Management Institute Sri Lanka</p>
+        </div>
+    </footer>
+
+    <script>
+        // Category Toggle Function
+        function toggleCategory(categoryId) {
+            const content = document.getElementById(categoryId);
+            content.classList.toggle('active');
+        }
+        
+        // Expand classification items on click
+        document.addEventListener('DOMContentLoaded', function() {
+            // Open first category by default
+            document.getElementById('marine').classList.add('active');
+            
+            // Add click functionality to classification items
+            document.querySelectorAll('.classification-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    // Toggle expanded class
+                    this.classList.toggle('expanded');
+                });
+            });
+            
+            // Search functionality
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const allItems = document.querySelectorAll('.classification-item');
+                let foundItems = 0;
+                
+                allItems.forEach(item => {
+                    const code = item.getAttribute('data-code').toLowerCase();
+                    const name = item.getAttribute('data-name').toLowerCase();
+                    const details = item.textContent.toLowerCase();
+                    
+                    if (code.includes(searchTerm) || 
+                        name.includes(searchTerm) || 
+                        details.includes(searchTerm)) {
+                        item.style.display = 'block';
+                        foundItems++;
+                        
+                        // Auto-expand the parent category if match found
+                        const parentCategory = item.closest('.category-content');
+                        if (parentCategory && !parentCategory.classList.contains('active')) {
+                            parentCategory.classList.add('active');
+                        }
+                        
+                        // Auto-expand the item itself
+                        item.classList.add('expanded');
+                    } else {
+                        item.style.display = 'none';
+                        item.classList.remove('expanded');
+                    }
+                });
+                
+                // Show message if no results
+                if (searchTerm && foundItems === 0) {
+                    // Create message if not exists
+                    let message = document.getElementById('noResults');
+                    if (!message) {
+                        message = document.createElement('div');
+                        message.id = 'noResults';
+                        message.style.padding = '2rem';
+                        message.style.textAlign = 'center';
+                        message.style.color = 'var(--iwmi-text-light)';
+                        message.style.backgroundColor = 'var(--iwmi-white)';
+                        message.style.borderRadius = '8px';
+                        message.style.margin = '1rem 0';
+                        message.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)';
+                        message.innerHTML = `
+                            <i class="fas fa-search" style="font-size:2rem; margin-bottom:1rem; color:var(--iwmi-light-blue);"></i>
+                            <h4 style="color:var(--iwmi-dark-blue); margin-bottom:0.5rem;">No Results Found</h4>
+                            <p>No wetland types found for "${searchTerm}"</p>
+                        `;
+                        
+                        // Insert after search box
+                        const classificationSystem = document.querySelector('.classification-system');
+                        classificationSystem.appendChild(message);
+                    }
+                } else {
+                    const message = document.getElementById('noResults');
+                    if (message) {
+                        message.remove();
+                    }
+                }
+            });
+            
+            // Add keyboard shortcut for search
+            document.addEventListener('keydown', function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+                    e.preventDefault();
+                    searchInput.focus();
+                    searchInput.select();
+                }
+            });
+            
+            // Print classification system info
+            console.log("Ramsar Classification System Loaded:");
+            console.log("- Marine/Coastal: 11 types (A-K)");
+            console.log("- Inland: 22 types (L-Zk)"); 
+            console.log("- Human-made: 9 types (1-9)");
+            console.log("Total: 42 wetland types");
+        });
+    </script>
+</body>
+</html>
+
